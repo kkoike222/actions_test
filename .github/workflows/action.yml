@@ -8,5 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: print log
-      run: echo "Hello!"
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          # プライベートリポジトリを指定
+          repository: ko1ke/webpack-sass
+          # checkout 先のパスを指定
+          path: ./private-repo-example
+          # 秘密鍵を指定
+          token: ${{ secrets.TOKEN }}    
