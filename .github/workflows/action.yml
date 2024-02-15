@@ -9,7 +9,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+    
+      - uses: actions/checkout@v4
+        with:
+          # プライベートリポジトリを指定
+          repository: kkoike222/private
+          # checkout 先のパスを指定
+          path: ./private-repo-example
+    
+   
       # - uses: actions/checkout@v4
       #   with:
       #     # プライベートリポジトリを指定
@@ -19,13 +27,13 @@ jobs:
       #     # 秘密鍵を指定
       #     token: ${{ secrets.TOKEN }}    
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '18'
       
-      - name: Run index.js
-        run: node index.js
-        env:
-          SEACRET: ${{ secrets.SEACRET }}
-          HOGE: ${{ vars.HOGE }}
+      # - name: Run index.js
+      #   run: node index.js
+      #   env:
+      #     SEACRET: ${{ secrets.SEACRET }}
+      #     HOGE: ${{ vars.HOGE }}
