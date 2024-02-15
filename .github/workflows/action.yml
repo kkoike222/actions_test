@@ -9,4 +9,4 @@ jobs:
 
     steps:
     - name: print log
-      run: echo "Hello!"
+      run: echo "GOOD!"
